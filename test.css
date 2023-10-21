@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    /* background-color: red */
+    overflow-x: hidden;
+}
+
+.page1 {
+    width: 100vw;
+    height: 90vh;
+    overflow: hidden;    
+    /* background-color: #3F3047; */
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.page1-inner {
+    z-index: 1;
+    position: absolute;
+    font-family: "gilroy";
+    font-weight: 600;
+    font-size: 48px;
+    text-align: center;
+    line-height: 1;
+    margin-top: -20px;
+}
+
+
+.background {
+    width: 100vw;
+    opacity: 0.1;
+    z-index: -1;
+    /* position: absolute; */
+}
+
+.nav {
+    height: 10vh;
+    width: 100vw;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.nav-left {
+    margin-left: 100px;
+}
+
+.nav-left>img {
+    width: 250px;
+}
+
+.nav-right {
+    margin-right: 100px;
+}
+
+@font-face {
+    font-family: "gilroy";
+    src: url("Gilroy-ExtraBold.otf");
+}
+
+.nav-buttons {
+    padding: 15px 35px;
+    font-family: "gilroy";
+    font-weight: 400;
+    font-size: 18px;
+    background-color: white;
+    color: #3F3047;
+    border: none;
+    border-radius: 15px;
+    border: 1px solid #3F3047;
+}
+
+.nav-buttons:hover {
+    background-color: #3F3047;
+    color: white;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+.form input[type=text] {
+    padding: 0px 20px;
+    font-size: 24px;
+    font-family: "gilroy";
+    font-weight: 500;
+    height: 60px;
+    width: 400px;
+    border-radius: 15px;
+    border: 2px solid #3F3047;
+}
+
+.form input[type=submit] {
+    padding: 0px 20px;
+    font-size: 28px;
+    font-weight: 300;
+    font-family: "gilroy";
+    height: 60px;
+    width: 150px;
+    border-radius: 15px;
+    background-color: #3F3047;
+    color: white;
+    border: none;
+}

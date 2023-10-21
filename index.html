@@ -1,35 +1,45 @@
+<!-- WebSockets - Two way connection (Client-Server) dono ek doosre koi bhi update push kar sakta hai
+isse efficient chat apps banti hai -->
+<!-- Database me store krdu msgs and waha se retrieve karlu to this is a valid option -->
+<!-- But WebSockets solve a very important problem - HTTP connection ka - HTTP Long Polling read more about it later -->
+<!-- http protocol me it is not possible that server gives request to the client jabki in real life world you might want to do it -->
+<!-- client server me ek 2 way connection ban jaata hai, dono me se jiske paas update hota hai wo saamne wale ko dedeta hai, this is called a web socket connection -->
+<!-- jaisa http and https hota hai, we have ws and wss-web socket secure protocol -->
+<!-- web sockets are implemented using nodejs ka socket.io, it is a javascript library for real time applications -->
+<!-- dono me se agar koi bhi koisa event create krta hai to doosra listen kar sakta hai -->
+<!-- we want ki web socket to accept connections and uske hisaab se chat application chale -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="test.css">
-    <title>Document</title>
+    <title>iChat - Realtime Node Socket.io Chat App</title>
+    <!-- standalone build exposed by server for client taaki server aur client jud jaye -->
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+
+    <!-- <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script src="js/client.js"></script> -->
+    
+    <!-- // the above two lines were fit and fine, but since they are in head tag to ye pahle hi load ho jaa rhi hai and ham jo kaam kr rhe hai
+    it requires them to load baadme, ham append function baadme call krna chahte hai, par ye to phle hi run hoke container dhoondh rhi hai jo abhi tak bana nhi hai
+    so the best thing to do is either to defer the srcipts or body tag closing ke just upar likhdo. -->
+
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="js/client.js"></script>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <!-- <div class="background"> -->
-    <!-- </div> -->
-    <nav class="nav">
-        <div class="nav-left">
-            <img src="squadspeak-logo.png">
+    <div class="wrapper">
+        <div class="container">
+            <!-- <div class="message right">Aryan: Hello Buddy!</div>
+            <div class="message left">Pritpal: Hey There!</div> -->
         </div>
-        <div class="nav-right">
-            <button class="nav-buttons">Sign Up</button>
-            <button class="nav-buttons">Login</button>
-        </div>
-    </nav>
-    <div class="page1">
-        <img src="bg.jpg" class="background">
-        <div class="page1-inner">
-            <span>
-                dive into a world of <br>limitless conversations
-            </span>
-            <div class="form">
-                <form action="./index2.html" method="POST">
-                    <input type="text" placeholder="Enter name to enter chat:">
-                    <input type="submit" value="Enter">
-                </form>
-            </div>
+        <div class="send">
+            <form action="#" id="send-container">
+                <input type="text" name="messageInp" id="messageInp" placeholder="Enter your message here...">
+                <button class="btn" type="submit">Send</button>
+            </form>
         </div>
     </div>
 </body>

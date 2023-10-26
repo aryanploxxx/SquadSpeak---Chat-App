@@ -1,6 +1,10 @@
 const socket = io('http://127.0.0.1:8000');
+// let importedVariable = require('./export-name');
+// console.log(importedVariable); // This will output: "Hello from moduleA"
+import { importedVariable } from './export-name.js';
+
 const form = document.getElementById("send-container");
-const messageInput = document.getElementById("messageInp");
+const messageInput = importedVariable;
 const messageContainer = document.querySelector(".container"); 
 // jab bhi message aayega is query me dal jayega
 
@@ -30,24 +34,24 @@ audio.play().catch(error => {
     console.error("Audio playback error:", error);
 });
 
-const user_name = prompt("Enter your name to join: ");
-socket.emit('new-user-joined', user_name);
+// const user_name = prompt("Enter your name to join: ");
+socket.emit('new-user-joined', importedVariable);
 // event emit hua hai jo index.js me pakda jayega and o/p aayega
 
 // socket.on('connect_error', (error) => {
 //     console.log('Connection Error:', error);
 // });
 
-socket.on('user-joined', user_name=>{
-    append(`${user_name} joined the chat.`,'right'); // user-joined function index.js me name hi emit kar rha tha
+socket.on('user-joined', importedVariable=>{
+    append(`${importedVariable} joined the chat.`,'right'); // user-joined function index.js me name hi emit kar rha tha
 });
 
 socket.on('recieve', data =>{ // recieve event se ek object mil rha hai, usko hamne short me data naam ke object me store krlia
-    append(`${data.user_name}: ${data.message}`,'left'); // user-joined function index.js me name hi emit kar rha tha
+    append(`${data.importedVariable}: ${data.message}`,'left'); // user-joined function index.js me name hi emit kar rha tha
 });
 
-socket.on('left', user_name=>{
-    append(`${user_name} left the chat.`,'left'); // user-joined function index.js me name hi emit kar rha tha
+socket.on('left', importedVariable=>{
+    append(`${importedVariable} left the chat.`,'left'); // user-joined function index.js me name hi emit kar rha tha
 });
 
 

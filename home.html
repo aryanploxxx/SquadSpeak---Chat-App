@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="test.css">
     <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
-    <script defer src="js/client.js"></script>
+    <script defer type="module" src="nodeServer/export-name.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -28,7 +28,7 @@
             </span>
             <div class="form">
                 <form action="./index.html" method="GET">
-                    <input type="text" placeholder="Enter name to enter chat:">
+                    <input type="text" id="user-name" placeholder="Enter name to enter chat:">
                     <input type="submit" value="Enter">
                 </form>
             </div>
